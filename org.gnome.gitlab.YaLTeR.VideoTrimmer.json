@@ -74,8 +74,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/b0b1b06e35c062e26de279507bf79cf9/video-trimmer-0.4.1.tar.xz",
-                    "sha256" : "41a74f908c8f3762bd6498f1adc9b1fb31070da0bac5cc02bd54d9288568d6a5"
+                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/a317380a37a956adfd4214f738dc26b3/video-trimmer-0.4.2.tar.xz",
+                    "sha256" : "62ef95371446b539cdf2947df492a948b65be4941ce9f0b3ec471b0e62272c24"
                 }
             ]
         }
