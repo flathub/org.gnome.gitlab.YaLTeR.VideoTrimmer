@@ -64,13 +64,28 @@
             ]
         },
         {
+            "name" : "libadwaita",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dexamples=false",
+                "-Dtests=false"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/libadwaita.git",
+                    "commit" : "bfac98df61105d6453140b248ea4c46c3c152036"
+                }
+            ]
+        },
+        {
             "name" : "video-trimmer",
             "buildsystem" : "meson",
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/9e8ec3c351a6f183b0b0f89e9c173063/video-trimmer-0.5.0.tar.xz",
-                    "sha256" : "de620a48e8126cab568c23ffd95aeb63815380d9cc3c44efaf0dd86c0663a9d4"
+                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/310999a068b7be3228ba55b09e784fe3/video-trimmer-0.6.0.tar.xz",
+                    "sha256" : "66e1de36e829f8c792fb22da98d7303382ee4cdd5ae61ce225a7830687f06070"
                 }
             ]
         }
