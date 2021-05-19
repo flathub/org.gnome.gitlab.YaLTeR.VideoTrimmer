@@ -92,6 +92,28 @@
             ]
         },
         {
+            "name" : "gtk",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dbuild-examples=false",
+                "-Dbuild-tests=false",
+                "-Ddemos=false",
+                "-Dmedia-ffmpeg=disabled"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gtk.git",
+                    "tag" : "4.2.1",
+                    "commit" : "ba44668478b7184bec02609f292691b85a2c6cdd"
+                },
+                {
+                    "type" : "patch",
+                    "path" : "gtk-fix-mediafile.patch"
+                }
+            ]
+        },
+        {
             "name" : "libadwaita",
             "buildsystem" : "meson",
             "config-opts" : [
