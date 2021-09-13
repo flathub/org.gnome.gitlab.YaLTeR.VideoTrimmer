@@ -6,14 +6,14 @@
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
     ],
-    "add-extensions": {
-        "org.freedesktop.Platform.ffmpeg-full": {
-            "directory": "lib/ffmpeg",
-            "version": "20.08",
-            "add-ld-path": "."
+    "add-extensions" : {
+        "org.freedesktop.Platform.ffmpeg-full" : {
+            "directory" : "lib/ffmpeg",
+            "version" : "20.08",
+            "add-ld-path" : "."
         }
     },
-    "cleanup-commands": [
+    "cleanup-commands" : [
         "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg"
     ],
     "command" : "video-trimmer",
@@ -47,7 +47,6 @@
                 "--disable-encoders",
                 "--disable-devices",
                 "--disable-ffplay",
-                "--disable-ffprobe",
                 "--enable-gpl"
             ],
             "cleanup" : [
@@ -58,17 +57,14 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://www.ffmpeg.org/releases/ffmpeg-4.3.1.tar.xz",
-                    "sha256" : "ad009240d46e307b4e03a213a0f49c11b650e445b1f8be0dda2a9212b34d2ffb"
+                    "url" : "https://ffmpeg.org/releases/ffmpeg-4.4.tar.xz",
+                    "sha256" : "06b10a183ce5371f915c6bb15b7b1fffbe046e8275099c96affc29e17645d909"
                 }
             ]
         },
         {
             "name" : "libsass",
             "buildsystem" : "meson",
-            "config-opts" : [
-                "--libdir=/app/lib"
-            ],
             "sources" : [
                 {
                     "type" : "git",
@@ -80,9 +76,6 @@
         {
             "name" : "sassc",
             "buildsystem" : "meson",
-            "config-opts" : [
-                "--libdir=/app/lib"
-            ],
             "sources" : [
                 {
                     "type" : "git",
@@ -104,12 +97,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gtk.git",
-                    "tag" : "4.2.1",
-                    "commit" : "ba44668478b7184bec02609f292691b85a2c6cdd"
-                },
-                {
-                    "type" : "patch",
-                    "path" : "gtk-fix-mediafile.patch"
+                    "tag" : "4.4.0",
+                    "commit" : "f1f197e3b94a55d5cbfaae2498f991a0ae733b32"
                 }
             ]
         },
@@ -124,7 +113,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libadwaita.git",
-                    "commit" : "bfac98df61105d6453140b248ea4c46c3c152036"
+                    "commit" : "e947ca63d57d65ef45383ff4cd65c95c7695ed05"
                 }
             ]
         },
@@ -134,8 +123,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/310999a068b7be3228ba55b09e784fe3/video-trimmer-0.6.0.tar.xz",
-                    "sha256" : "66e1de36e829f8c792fb22da98d7303382ee4cdd5ae61ce225a7830687f06070"
+                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/00b25e36ca21c275ee912e2391c252d7/video-trimmer-0.6.1.tar.xz",
+                    "sha256" : "13a7a513355f8ac68ea0c9d2e2d06be69f040444c35e7610d34e1d5a24618885"
                 }
             ]
         }
