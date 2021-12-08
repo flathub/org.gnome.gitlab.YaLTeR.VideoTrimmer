@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.gitlab.YaLTeR.VideoTrimmer",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "40",
+    "runtime-version" : "41",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -9,7 +9,7 @@
     "add-extensions" : {
         "org.freedesktop.Platform.ffmpeg-full" : {
             "directory" : "lib/ffmpeg",
-            "version" : "20.08",
+            "version" : "21.08",
             "add-ld-path" : "."
         }
     },
@@ -25,6 +25,10 @@
         "--device=dri"
     ],
     "cleanup" : [
+        "/bin/blueprint-compiler",
+        "/bin/gtk4-*",
+        "/bin/pango-*",
+        "/bin/sassc",
         "/include",
         "/lib/pkgconfig",
         "/man",
@@ -39,29 +43,6 @@
         "append-path" : "/usr/lib/sdk/rust-stable/bin"
     },
     "modules" : [
-        {
-            "name" : "ffmpeg",
-            "config-opts" : [
-                "--disable-doc",
-                "--disable-decoders",
-                "--disable-encoders",
-                "--disable-devices",
-                "--disable-ffplay",
-                "--enable-gpl"
-            ],
-            "cleanup" : [
-                "/include",
-                "/lib",
-                "/share"
-            ],
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://ffmpeg.org/releases/ffmpeg-4.4.tar.xz",
-                    "sha256" : "06b10a183ce5371f915c6bb15b7b1fffbe046e8275099c96affc29e17645d909"
-                }
-            ]
-        },
         {
             "name" : "libsass",
             "buildsystem" : "meson",
@@ -85,8 +66,23 @@
             ]
         },
         {
+            "name" : "pango",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/pango.git",
+                    "tag" : "1.50.0",
+                    "commit" : "e80e224baabc7bf22971d0a97c8b31d32fa8ca1c"
+                }
+            ]
+        },
+        {
             "name" : "gtk",
             "buildsystem" : "meson",
+            "build-commands" : [
+                "mkdir -p /app/share/icons/hicolor"
+            ],
             "config-opts" : [
                 "-Dbuild-examples=false",
                 "-Dbuild-tests=false",
@@ -97,8 +93,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gtk.git",
-                    "tag" : "4.4.0",
-                    "commit" : "f1f197e3b94a55d5cbfaae2498f991a0ae733b32"
+                    "commit" : "348e34f2218d9ddd795734719235786db653ec2d"
                 }
             ]
         },
@@ -106,6 +101,7 @@
             "name" : "libadwaita",
             "buildsystem" : "meson",
             "config-opts" : [
+                "-Dvapi=false",
                 "-Dexamples=false",
                 "-Dtests=false"
             ],
@@ -113,7 +109,18 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libadwaita.git",
-                    "commit" : "e947ca63d57d65ef45383ff4cd65c95c7695ed05"
+                    "commit" : "87c68e4b6aa38b85656615f5f9b9592683af409f"
+                }
+            ]
+        },
+        {
+            "name" : "blueprint",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
+                    "commit" : "d0cf13b2c45e121ee93f3472dcc6c9edb5ac4f84"
                 }
             ]
         },
@@ -123,8 +130,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/00b25e36ca21c275ee912e2391c252d7/video-trimmer-0.6.1.tar.xz",
-                    "sha256" : "13a7a513355f8ac68ea0c9d2e2d06be69f040444c35e7610d34e1d5a24618885"
+                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/95cd5a0214090c097d7f8d2e09398ba5/video-trimmer-0.7.0.tar.xz",
+                    "sha256" : "817ca740e72d62d39b585be11672f583f55415c34452b1c575092932d6b849b9"
                 }
             ]
         }
