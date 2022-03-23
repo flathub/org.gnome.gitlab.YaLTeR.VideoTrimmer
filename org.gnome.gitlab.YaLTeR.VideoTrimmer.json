@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.gitlab.YaLTeR.VideoTrimmer",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "41",
+    "runtime-version" : "42",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -26,93 +26,12 @@
     ],
     "cleanup" : [
         "/bin/blueprint-compiler",
-        "/bin/gtk4-*",
-        "/bin/pango-*",
-        "/bin/sassc",
-        "/include",
-        "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/gtk-doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
+        "/lib/pkgconfig"
     ],
     "build-options" : {
         "append-path" : "/usr/lib/sdk/rust-stable/bin"
     },
     "modules" : [
-        {
-            "name" : "libsass",
-            "buildsystem" : "meson",
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://github.com/lazka/libsass.git",
-                    "branch" : "meson"
-                }
-            ]
-        },
-        {
-            "name" : "sassc",
-            "buildsystem" : "meson",
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://github.com/lazka/sassc.git",
-                    "branch" : "meson"
-                }
-            ]
-        },
-        {
-            "name" : "pango",
-            "buildsystem" : "meson",
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/pango.git",
-                    "tag" : "1.50.0",
-                    "commit" : "e80e224baabc7bf22971d0a97c8b31d32fa8ca1c"
-                }
-            ]
-        },
-        {
-            "name" : "gtk",
-            "buildsystem" : "meson",
-            "build-commands" : [
-                "mkdir -p /app/share/icons/hicolor"
-            ],
-            "config-opts" : [
-                "-Dbuild-examples=false",
-                "-Dbuild-tests=false",
-                "-Ddemos=false",
-                "-Dmedia-ffmpeg=disabled"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gtk.git",
-                    "commit" : "348e34f2218d9ddd795734719235786db653ec2d"
-                }
-            ]
-        },
-        {
-            "name" : "libadwaita",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "-Dvapi=false",
-                "-Dexamples=false",
-                "-Dtests=false"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libadwaita.git",
-                    "commit" : "87c68e4b6aa38b85656615f5f9b9592683af409f"
-                }
-            ]
-        },
         {
             "name" : "blueprint",
             "buildsystem" : "meson",
@@ -130,8 +49,7 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/95cd5a0214090c097d7f8d2e09398ba5/video-trimmer-0.7.0.tar.xz",
-                    "sha256" : "817ca740e72d62d39b585be11672f583f55415c34452b1c575092932d6b849b9"
+                    "path" : "/home/yalter/source/rs/video-trimmer/build/meson-dist/video-trimmer-0.7.0-1.tar.xz"
                 }
             ]
         }
