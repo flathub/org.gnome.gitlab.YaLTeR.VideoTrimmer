@@ -48,8 +48,10 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
+                    /* Commit 258b43c92c6f409e0d6d5e787e0de588acc23223 with translation and dependency updates over 0.7.0. */
                     "type" : "archive",
-                    "path" : "/home/yalter/source/rs/video-trimmer/build/meson-dist/video-trimmer-0.7.0-1.tar.xz"
+                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/480683209ffd5fcbaf70d9c974fe06b0/video-trimmer-0.7.0.tar.xz",
+                    "sha256" : "1c39f26de53a4b5fd117e9470012343f27005c9e070caea0f89b463ad07f46fc"
                 }
             ]
         }
