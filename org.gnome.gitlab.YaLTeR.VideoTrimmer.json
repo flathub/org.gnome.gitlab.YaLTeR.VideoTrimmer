@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.gitlab.YaLTeR.VideoTrimmer",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "43",
+    "runtime-version" : "44",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -50,8 +50,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/05d847221ffe410455ed7f516dd45b7f/video-trimmer-0.8.0.tar.xz",
-                    "sha256" : "0edcca4d6c36323d327e37c9662ed3bedd3914a63e0f9b369f265c5df3b0160d"
+                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/771cbcd5e14fd08328a8942c0a846ce1/video-trimmer-0.8.1.tar.xz",
+                    "sha256" : "a37dc5c199b4833c274c48419094a12d0d0c9ae19ad304bf8b2ee862c8f282e9"
                 }
             ]
         }
