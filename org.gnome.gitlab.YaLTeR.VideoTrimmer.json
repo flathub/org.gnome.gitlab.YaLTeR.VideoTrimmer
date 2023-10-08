@@ -22,8 +22,7 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--socket=pulseaudio",
-        "--device=dri",
-        "--filesystem=xdg-videos"
+        "--device=dri"
     ],
     "cleanup" : [
         "/bin/blueprint-compiler",
