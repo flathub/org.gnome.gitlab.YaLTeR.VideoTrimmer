@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.gitlab.YaLTeR.VideoTrimmer",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "46",
+    "runtime-version" : "47",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -9,7 +9,7 @@
     "add-extensions" : {
         "org.freedesktop.Platform.ffmpeg-full" : {
             "directory" : "lib/ffmpeg",
-            "version" : "23.08",
+            "version" : "24.08",
             "add-ld-path" : "."
         }
     },
@@ -29,7 +29,10 @@
         "/lib/pkgconfig"
     ],
     "build-options" : {
-        "append-path" : "/usr/lib/sdk/rust-stable/bin"
+        "append-path" : "/usr/lib/sdk/rust-stable/bin",
+        "env": {
+            "RUSTFLAGS": "-C force-frame-pointers=yes"
+        }
     },
     "modules" : [
         {
@@ -42,7 +45,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "commit" : "2a39a16391122af2f3d812e478c1c1398c98b972"
+                    "commit" : "66b43c36cf1017c878762007373964a096b3d2a5"
                 }
             ]
         },
@@ -52,8 +55,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/YaLTeR/video-trimmer/uploads/191a147cace8346030b957422f8b31a9/video-trimmer-0.8.2.tar.xz",
-                    "sha256" : "bb44b6bd5f20718dc54926db3eec36820d0b14f6f7ff5dcf40919658086c60ef"
+                    "url" : "https://gitlab.gnome.org/-/project/11135/uploads/2573eae6e0279de48b5d996e87ae0701/video-trimmer-0.9.0.tar.xz",
+                    "sha256" : "d43d43fb12762f7e30eac42248c56d638a439ee94d9e8ebcb79baa2618a9c7eb"
                 }
             ]
         }
