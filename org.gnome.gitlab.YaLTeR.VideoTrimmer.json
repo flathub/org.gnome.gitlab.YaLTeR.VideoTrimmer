@@ -57,6 +57,10 @@
                     "type" : "archive",
                     "url" : "https://gitlab.gnome.org/-/project/11135/uploads/2573eae6e0279de48b5d996e87ae0701/video-trimmer-0.9.0.tar.xz",
                     "sha256" : "d43d43fb12762f7e30eac42248c56d638a439ee94d9e8ebcb79baa2618a9c7eb"
+                },
+                {
+                    "type" : "patch",
+                    "path" : "0001-Realize-media-file-in-advance-before-opening.patch"
                 }
             ]
         }
