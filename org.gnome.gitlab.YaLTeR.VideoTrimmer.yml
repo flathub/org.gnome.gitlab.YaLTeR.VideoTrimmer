@@ -1,6 +1,6 @@
 app-id: org.gnome.gitlab.YaLTeR.VideoTrimmer
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -33,10 +33,16 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/jwestman/blueprint-compiler.git
-        commit: 66b43c36cf1017c878762007373964a096b3d2a5
+        commit: 04ef0944db56ab01307a29aaa7303df6067cb3c0
   - name: video-trimmer
     buildsystem: meson
     sources:
-      - type: archive
-        url: https://gitlab.gnome.org/-/project/11135/uploads/2573eae6e0279de48b5d996e87ae0701/video-trimmer-0.9.0.tar.xz
-        sha256: d43d43fb12762f7e30eac42248c56d638a439ee94d9e8ebcb79baa2618a9c7eb
+      - type: git
+        url: https://gitlab.gnome.org/YaLTeR/video-trimmer.git
+        commit: 079235c2d1abf16cc4fd92a455c0f1f7ab0587c6
+      # Generated with flatpak-cargo-generator.py
+      - cargo-sources.json
+      - type: shell
+        commands:
+          - mkdir .cargo
+          - cp cargo/config .cargo/
