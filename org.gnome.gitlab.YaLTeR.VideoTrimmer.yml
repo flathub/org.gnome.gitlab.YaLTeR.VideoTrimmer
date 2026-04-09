@@ -21,7 +21,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/YaLTeR/video-trimmer.git
-        commit: f4737219365f6a80d329a69e9699c082e92b356e
+        commit: 013bfa4bf9beb06f2518b6104e100fd7b927ad82
       # Generated with flatpak-cargo-generator.py
       - cargo-sources.json
       - type: shell
